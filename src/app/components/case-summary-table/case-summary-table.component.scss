@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+
+}
+
+.table-data {
+    max-height: 360px;
+    overflow-x: scroll;
+}
+
+.mat-cell,
+th.mat-header-cell {
+    font-size: 0.8rem;
+    color: #343a40 !important;
+}

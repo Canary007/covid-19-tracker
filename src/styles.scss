@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import "~bootstrap/dist/css/bootstrap.css";
+@include mat-core();
+
+$my-app-primary: mat-palette($mat-indigo);
+$my-app-accent: mat-palette($mat-pink, 500, 900, A100);
+$my-app-warn: mat-palette($mat-deep-orange);
+
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+@include angular-material-theme($my-app-theme);
+
+$typography: mat-typography-config($font-family: 'Nunito, sans-serif',
+    $headline: mat-typography-level(32px, 48px, 700));
+
+@include mat-core($typography); // $typography is an **optional** argument for the mat-core
+
+.nunito {
+    font-family: 'Nunito', sans-serif;
+}
+
+.background-one {
+    background: linear-gradient(135deg, #65799b 0%, #5e2563 100%);
+}
+
+.background-one-height {
+    height: 25em;
+}
+
+.full-length,
+.full-width {
+    width: 100%;
+}
+
+.cdk-overlay-pane {
+    position: absolute;
+    pointer-events: auto;
+    box-sizing: border-box;
+    z-index: 1000;
+    display: -webkit-box;
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+}

@@ -1,0 +1,17 @@
+<div class="container py-4 px-5" [style.top]="'34px'">
+
+    <app-case-summary [cases]="globalCases"></app-case-summary>
+
+    <app-filters [countryList]="countries"></app-filters>
+
+    <div class="row align-items-center justify-content-center">
+        <div class="col-md-12">
+            <app-case-summary-chart [countryDataConfirmed]="countryWiseConfirmedData"
+                [countryDataRecovered]="countryWiseRecoveredData" [countryDataDeceased]="countryWiseDeceasedData">
+            </app-case-summary-chart>
+        </div>
+    </div>
+
+    <app-case-summary-table></app-case-summary-table>
+
+</div>

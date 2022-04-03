@@ -1,0 +1,53 @@
+<div class="row mt-3">
+    <div class="col-sm-12">
+        <form [formGroup]="filterForm">
+            <div class="row d-flex flex-row justify-content-between align-items-center">
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <mat-form-field class="full-width small" appearance="outline">
+                        <mat-label>Choose Location</mat-label>
+                        <mat-select formControlName="locationCtrl">
+                            <mat-option *ngFor="let location of countryList" [value]="location">
+                                {{ location }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <mat-form-field class="full-width small" appearance="outline">
+                        <mat-label>Choose Status</mat-label>
+                        <mat-select formControlName="statusCtrl">
+                            <mat-option *ngFor="let status of statusList" [value]="status">
+                                {{ status }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <mat-form-field class="full-width small" appearance="outline">
+                        <mat-label>From</mat-label>
+                        <input matInput [matDatepicker]="dp1" formControlName="start_date" />
+                        <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
+                        <mat-datepicker #dp1 disabled="false"></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <mat-form-field class="full-width small" appearance="outline">
+                        <mat-label>To</mat-label>
+                        <input matInput [matDatepicker]="dp2" placeholder="Choose End Date"
+                            formControlName="end_date" />
+                        <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+                        <mat-datepicker #dp2 disabled="false"></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <!-- <div class="col-sm-4 col-md-4 col-lg-4 d-flex justify-content-end align-items-center">
+                    <button mat-raised-button color="accent" (click)="clearFilters()">
+                        Clear
+                    </button>
+                    <button mat-raised-button color="primary" (click)="makeAPICall()" [style.margin-left]="'1rem'">
+                        Apply
+                    </button>
+                </div> -->
+            </div>
+        </form>
+    </div>
+</div>
